@@ -1,0 +1,12 @@
+# Showcase fork only (never part of an upstream pull request).
+# package.json pins pnpm@11.9.0 (corepack); CI uses Node 24.
+version: 1
+app:
+  install: "pnpm install --frozen-lockfile"
+  start: pnpm dev --port {port} --host 0.0.0.0
+  url: http://localhost:{port}
+  readyPath: /
+  runtime: node24
+demo:
+  maxVideos: 1
+  beforePass: true
